@@ -1,0 +1,12 @@
+<div class="card" *ngFor="let todo of todos">
+    <div class="todo-container">
+        <input type="checkbox" [ngModel]="todo.completed" (change)="onToDoCompleteChange(todo.id)">
+        <p *ngIf="!todo.canEdit">{{todo.title}}</p>
+        <input *ngIf="todo.canEdit" type="text" [(ngModel)]="todoEditInput" tabindex="1">
+    </div>
+    <div class="todo-action-container">
+        <img *ngIf="todo.canEdit" class="icon" src="../../assets/icons/check_circle.svg" (click)="updateTodo(todo.id)"/>
+        <img *ngIf="!todo.canEdit" class="icon" src="../../assets/icons/edit.svg" (click)="onEditTodo(todo)"/>
+        <img class="icon" src="../../assets/icons/delete.svg" (click)="onDeleteTodo(todo.id)"/>    
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<h1>Todo App</h1>
+<div class="todo-input-container">
+    <input type="text" [(ngModel)]="todoInput" tabindex="0">
+    <img src="../../assets/icons/add.svg" (click)="onAddTodo()"/>
+</div>
+<div class="board">
+    <div class="column">
+        <label>Todo Items</label>
+        <app-todo-card [todos]="todos"></app-todo-card>
+    </div>
+    <div class="column">
+        <label>Completed Items</label>
+        <app-todo-card [todos]="completedTodos"></app-todo-card>
+    </div>
+</div>

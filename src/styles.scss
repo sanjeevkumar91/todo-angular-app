@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+    font-family: "Andale Mono", serif;
+    box-sizing: border-box;
+}
+
+input, .icon {
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
