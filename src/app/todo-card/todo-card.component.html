@@ -5,8 +5,8 @@
         <input *ngIf="todo.canEdit" type="text" [(ngModel)]="todoEditInput" tabindex="1">
     </div>
     <div class="todo-action-container">
-        <img *ngIf="todo.canEdit" class="icon" src="../../assets/icons/check_circle.svg" (click)="updateTodo(todo.id)"/>
-        <img *ngIf="!todo.canEdit" class="icon" src="../../assets/icons/edit.svg" (click)="onEditTodo(todo)"/>
-        <img class="icon" src="../../assets/icons/delete.svg" (click)="onDeleteTodo(todo.id)"/>    
+        <img *ngIf="todo.canEdit" class="icon accept" src="../../assets/icons/check_circle.svg" (click)="updateTodo(todo.id)"/>
+        <img *ngIf="!todo.canEdit" class="icon edit" src="../../assets/icons/edit.svg" (click)="onEditTodo(todo)"/>
+        <img class="icon delete" src="../../assets/icons/delete.svg" (click)="onDeleteTodo(todo.id)"/>    
     </div>
 </div>

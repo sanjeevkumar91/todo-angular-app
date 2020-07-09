@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { addTodo, getTodo, deleteTodo, completeTodo, editTodo, updateTodo } from '../state/todo/todo.action';
+import { addTodo, getTodo } from '../state/todo/todo.action';
 import { ToDo, ToDoState } from '../state/todo/todo.reducer';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -13,7 +13,6 @@ import { map } from 'rxjs/operators';
 
 export class TodoComponent implements OnInit {
   public todoInput: string = '';
-  public todoEditInput: string;
   public todo$: Observable<ToDoState>;
   public todos: ToDo[] = [];
   public completedTodos: ToDo[] = [];

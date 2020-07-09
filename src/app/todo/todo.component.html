@@ -1,14 +1,14 @@
 <h1>Todo App</h1>
 <div class="todo-input-container">
-    <input type="text" [(ngModel)]="todoInput" tabindex="0">
-    <img src="../../assets/icons/add.svg" (click)="onAddTodo()"/>
+    <input type="text" [(ngModel)]="todoInput" tabindex="0" id="add-todo-input">
+    <img src="../../assets/icons/add.svg" (click)="onAddTodo()" id="add-todo-btn" />
 </div>
 <div class="board">
-    <div class="column">
+    <div class="column" id="todos">
         <label>Todo Items</label>
         <app-todo-card [todos]="todos"></app-todo-card>
     </div>
-    <div class="column">
+    <div class="column" id="completed-todos">
         <label>Completed Items</label>
         <app-todo-card [todos]="completedTodos"></app-todo-card>
     </div>
