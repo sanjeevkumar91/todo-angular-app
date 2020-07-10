@@ -21,10 +21,10 @@ describe('TodoComponent', () => {
     .compileComponents();
   }));
 
-  const addTodoItem = () => {
+  const addTodoItem = (item = 'Learn Angular') => {
     const todoInput: HTMLInputElement = hostElement.querySelector("#add-todo-input"); 
     const todoAddBtn: HTMLButtonElement = hostElement.querySelector("#add-todo-btn"); 
-    todoInput.value = 'Learn Angular';
+    todoInput.value = item;
     todoInput.dispatchEvent(new Event('input'));
     todoAddBtn.click();
     fixture.detectChanges();
@@ -47,6 +47,12 @@ describe('TodoComponent', () => {
     addTodoItem();
     expect(getTodoCard().querySelector('.todo-container p').innerText).toBe('Learn Angular');
     expect(component.todos.length).toBe(1);
+  });
+
+  it('should not add a blank todo item', () => {
+    addTodoItem('  ');
+    expect(component.todos.length).toBe(0);
+    expect(component.completedTodos.length).toBe(0);
   });
 
   it('should delete a todo item', () => {
