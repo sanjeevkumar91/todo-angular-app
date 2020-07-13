@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { ToDo, ToDoState } from '../state/todo/todo.reducer';
+import { Todo, TodoState } from '../state/todo/model';
 import { Store } from '@ngrx/store';
-import { deleteTodo, completeTodo, editTodo, updateTodo } from '../state/todo/todo.action';
+import { deleteTodo, completeTodo, editTodo, updateTodo } from '../state/todo/action';
 
 @Component({
   selector: 'app-todo-card',
@@ -10,9 +10,9 @@ import { deleteTodo, completeTodo, editTodo, updateTodo } from '../state/todo/to
 })
 
 export class TodoCardComponent {
-  @Input() todos: ToDo[];
+  @Input() todos: Todo[];
   public todoEditInput: string = '';
-  constructor(private store: Store<{ todo: ToDoState }>) {};
+  constructor(private store: Store<TodoState>) {};
 
   onDeleteTodo(id: number): void {
     this.store.dispatch(deleteTodo({ id }));
@@ -24,13 +24,14 @@ export class TodoCardComponent {
     this.todoEditInput = ""
   }
 
-  onEditTodo(todo: ToDo): void {
+  onEditTodo(todo: Todo): void {
     const { id, title } = todo
     this.todoEditInput = title;
     this.store.dispatch(editTodo({ id }));
   }
 
-  onToDoCompleteChange(id: number): void {
-    this.store.dispatch(completeTodo({ id }));
+  onToDoCompleteChange(todo: Todo): void {
+    const { id, completed } = todo
+    this.store.dispatch(completeTodo({ id, completed: !completed }));
   }
 }

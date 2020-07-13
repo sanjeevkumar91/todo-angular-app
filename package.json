@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "server": "node ./backend/app.js"
   },
   "private": true,
   "dependencies": {
@@ -21,8 +22,15 @@
     "@angular/platform-browser": "~10.0.0",
     "@angular/platform-browser-dynamic": "~10.0.0",
     "@angular/router": "~10.0.0",
+    "@ngrx/effects": "^9.2.0",
+    "@ngrx/entity": "^9.2.0",
+    "@ngrx/schematics": "^9.2.0",
     "@ngrx/store": "^9.2.0",
     "@ngrx/store-devtools": "^9.2.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
     "ngx-smooth-dnd": "^0.4.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

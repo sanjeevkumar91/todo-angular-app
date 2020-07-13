@@ -3,9 +3,9 @@ import { TodoCardComponent } from './todo-card.component';
 import { reducers } from '../state/index';
 import { Store, StoreModule } from '@ngrx/store';
 import { FormsModule } from '@angular/forms';
-import { ToDo } from '../state/todo/todo.reducer';
+import { Todo } from '../state/todo/model';
 
-const mockData: ToDo[] = [
+const mockData: Todo[] = [
     {
       id: 1,
       title: 'Learn Angular',
