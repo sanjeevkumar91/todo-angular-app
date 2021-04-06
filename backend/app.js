@@ -19,7 +19,7 @@ const log = (...msg) => console.log(msg)
 
 app.get('/api/todo/', (req, res) => {
     log('fetching records', req.body);
-    res.send(todos);
+    res.status(200).send(todos);
 });
 
 app.post('/api/todo/', (req, res) => {
@@ -31,13 +31,13 @@ app.post('/api/todo/', (req, res) => {
 app.put('/api/todo/:id/', (req, res) => {
     log('updating record started for id:', req.params.id, req.body);
     todos = todos.map((todo) => todo.id == req.params.id ? { ...todo, ...req.body } : todo);
-    res.send('Record updated successfully')
+    res.status(200).send('Record updated successfully')
 });
 
 app.delete('/api/todo/:id/', (req, res) => {
     log('deleting record started for id:', req.params.id);
     todos = todos.filter((todo) => todo.id != req.params.id)
-    res.send('Record deleted successfully')
+    res.status(200).send('Record deleted successfully')
 });
 
 app.listen(3000, () => {
