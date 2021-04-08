@@ -3,7 +3,6 @@ import { Store, select } from '@ngrx/store';
 import { addTodo, getTodos } from '../state/todo/action';
 import { Todo, TodoState } from '../state/todo/model';
 import { Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { selectActiveTodos, selectCompletedTodos } from '../state/todo/selectors'
 
 @Component({

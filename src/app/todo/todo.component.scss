@@ -15,6 +15,9 @@ h1 {
     display: flex;
     align-items: center;
     margin: 10px;
+    label {
+        padding-right: 10px;
+    }
     input[type="text"] {
         height: 20px;
         line-height: 20px;

@@ -1,12 +1,15 @@
 <div class="card" *ngFor="let todo of todos">
     <div class="todo-container">
-        <input type="checkbox" [ngModel]="todo.completed" (change)="onToDoCompleteChange(todo)">
+        <input name="task-name" type="checkbox" [ngModel]="todo.completed" (change)="onToDoCompleteChange(todo)">
         <p *ngIf="!todo.canEdit">{{todo.title}}</p>
         <input *ngIf="todo.canEdit" type="text" [(ngModel)]="todoEditInput" tabindex="1">
     </div>
     <div class="todo-action-container">
-        <img *ngIf="todo.canEdit" class="icon accept" src="../../assets/icons/check_circle.svg" (click)="updateTodo(todo.id)"/>
-        <img *ngIf="!todo.canEdit" class="icon edit" src="../../assets/icons/edit.svg" (click)="onEditTodo(todo)"/>
-        <img class="icon delete" src="../../assets/icons/delete.svg" (click)="onDeleteTodo(todo.id)"/>    
+        <img *ngIf="todo.canEdit" alt="valid todo" class="icon accept" src="../../assets/icons/check_circle.svg"
+            (click)="updateTodo(todo.id)" />
+        <img *ngIf="!todo.canEdit" alt="edit todo" class="icon edit" src="../../assets/icons/edit.svg"
+            (click)="onEditTodo(todo)" />
+        <img class="icon delete" alt="delete todo" src="../../assets/icons/delete.svg"
+            (click)="onDeleteTodo(todo.id)" />
     </div>
 </div>

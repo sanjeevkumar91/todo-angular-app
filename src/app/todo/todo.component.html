@@ -1,7 +1,8 @@
 <h1>Todo App</h1>
 <div class="todo-input-container">
-    <input type="text" [(ngModel)]="todoInput" tabindex="0" id="add-todo-input">
-    <img src="../../assets/icons/add.svg" (click)="onAddTodo()" id="add-todo-btn" />
+    <label for="add-todo-input">To do</label>
+    <input name="add-todo-input" type="text" [(ngModel)]="todoInput" tabindex="0" id="add-todo-input">
+    <img src="../../assets/icons/add.svg" alt="add todo" (click)="onAddTodo()" id="add-todo-btn" />
 </div>
 <div class="board">
     <div class="column" id="todos">
